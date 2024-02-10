@@ -13,6 +13,11 @@ custom_profile_link_prefixes:
   default: "https://yoursite.com/users/|"
   description: Optional text(s) to prepend before the user field value, e.g. https://yoursite.com/users/
 
+custom_profile_link_orgs:
+  type: list
+  default: "Organization,1,2|"
+  description: "Organization style links, format of label,id-of-name,id-of-url"
+
 custom_profile_link_debug_mode:
   type: bool
   default: false

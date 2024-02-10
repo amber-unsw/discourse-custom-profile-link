@@ -1,9 +1,10 @@
 <script type="text/discourse-plugin" version="0.8.7">
     if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] Settings dump follows",settings);
-    const ids      = settings.custom_profile_link_user_field_ids.replace(/_/g,"").split(/\|/).map(Number);
-    const labels   = settings.custom_profile_link_labels.split(/\|/);
-    const prefixes = settings.custom_profile_link_prefixes.split(/\|/);
-    const parsedSettings = {"ids": ids, "labels": labels, "prefixes": prefixes}
+    const ids       = settings.custom_profile_link_user_field_ids.replace(/_/g,"").split(/\|/).map(Number);
+    const labels    = settings.custom_profile_link_labels.split(/\|/);
+    const prefixes  = settings.custom_profile_link_prefixes.split(/\|/);
+    const orgs      = settings.custom_profile_link_orgs.split(/\|/);
+    const parsedSettings = {"ids": ids, "labels": labels, "prefixes": prefixes /*, "orgs": {"labels": orgLabels, "name-ids": orgNames, "url-ids": orgUrls} */}
     if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] Parsed settings dump follows",parsedSettings);
     api.registerConnectorClass('user-profile-primary', 'custom-profile-link', {
       setupComponent(args, component) {
