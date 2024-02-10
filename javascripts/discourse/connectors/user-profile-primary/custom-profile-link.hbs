@@ -1,0 +1,11 @@
+{{#if customProfileLink}}
+<div class="public-user-fields">
+    <div class="public-user-field">
+        <span class="user-field-value">
+            {{#each customProfileLink as |link|}}
+            <a href="{{link.[2]}}{{link.[0]}}" target="_blank">{{link.[1]}}</a>
+            {{/each}}
+        </span>
+    </div>
+</div>
+{{/if}}
