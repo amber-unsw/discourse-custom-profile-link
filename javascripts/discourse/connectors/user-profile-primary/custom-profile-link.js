@@ -11,6 +11,7 @@ export default class CustomProfileLink extends Component {
         const parsedSettings = { "ids": ids, "labels": labels, "prefixes": prefixes /*, "orgs": {"labels": orgLabels, "name-ids": orgNames, "url-ids": orgUrls} */ }
         if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] Parsed settings dump follows", parsedSettings);
         let links = [];
+        if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] args dump:", this.args.outletArgs);
         if (!this.args.outletArgs.user.get('user_fields')) {
             console.warn(`[Custom Profile Link] User Profile () missing "user_fields"! Raw user dump follows.`, this.args.outletArgs.user);
             return undefined;
