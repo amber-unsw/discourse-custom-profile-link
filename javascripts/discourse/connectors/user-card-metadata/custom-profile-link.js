@@ -11,6 +11,7 @@ export default class CustomProfileLink extends Component {
         const parsedSettings = { "ids": ids, "labels": labels, "prefixes": prefixes /*, "orgs": {"labels": orgLabels, "name-ids": orgNames, "url-ids": orgUrls} */ }
         if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] Parsed settings dump follows", parsedSettings);
         let links = [];
+        if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] args dump:", this.args);
         if (!this.args.model.get('user_fields')) {
             console.warn(`[Custom Profile Link] User Card () missing "user_fields"! Raw user dump follows.`, this.args.model);
             return undefined;
@@ -19,7 +20,7 @@ export default class CustomProfileLink extends Component {
                 if (!this.args.model.get('user_fields')[ids[i]] && settings.custom_profile_link_debug_mode) console.debug(`[Custom Profile Link] User field ${ids[i]} missing. user_fields dump follows.`, this.args.model.get("user_fields"));
                 if (!!this.args.model.get('user_fields')[ids[i]]) links.push([this.args.model.get('user_fields')[ids[i]], labels[i], prefixes[i]]);
             }
-            if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] links built, dump:", links)
+            if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] links built, dump:", links);
             return links;
         }
     }
