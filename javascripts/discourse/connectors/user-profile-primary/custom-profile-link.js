@@ -11,13 +11,13 @@ export default class CustomProfileLink extends Component {
         const parsedSettings = { "ids": ids, "labels": labels, "prefixes": prefixes /*, "orgs": {"labels": orgLabels, "name-ids": orgNames, "url-ids": orgUrls} */ }
         if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] Parsed settings dump follows", parsedSettings);
         let links = [];
-        if (!args.user.get('user_fields')) {
-            console.warn(`[Custom Profile Link] User Profile () missing "user_fields"! Raw user dump follows.`, args.user);
+        if (!this.args.user.get('user_fields')) {
+            console.warn(`[Custom Profile Link] User Profile () missing "user_fields"! Raw user dump follows.`, this.args.user);
             return undefined;
         } else {
             for (let i = 0; i < ids.length; i++) {
-                if (!args.user.get('user_fields')[ids[i]] && settings.custom_profile_link_debug_mode) console.debug(`[Custom Profile Link] User field ${ids[i]} missing. user_fields dump follows.`, args.user.get("user_fields"));
-                if (!!args.user.get('user_fields')[ids[i]]) links.push([args.user.get('user_fields')[ids[i]], labels[i], prefixes[i]]);
+                if (!this.args.user.get('user_fields')[ids[i]] && settings.custom_profile_link_debug_mode) console.debug(`[Custom Profile Link] User field ${ids[i]} missing. user_fields dump follows.`, this.args.user.get("user_fields"));
+                if (!!this.args.user.get('user_fields')[ids[i]]) links.push([this.args.user.get('user_fields')[ids[i]], labels[i], prefixes[i]]);
             }
             if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] links built, dump:", links)
             return links;
