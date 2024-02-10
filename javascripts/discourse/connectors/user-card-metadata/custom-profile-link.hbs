@@ -1,7 +1,7 @@
-{{#if customProfileLink}}
+{{#if this.links}}
 <h3 class="user-card-public-field">
     <span class="user-field-value">
-        {{#each customProfileLink as |link|}}
+        {{#each this.links as |link|}}
         <a href="{{link.[2]}}{{link.[0]}}" target="_blank">{{link.[1]}}</a>
         {{/each}}
     </span>
