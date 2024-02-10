@@ -12,13 +12,13 @@ export default class CustomProfileLink extends Component {
         if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] Parsed settings dump follows", parsedSettings);
         let links = [];
         if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] args dump:", this.args);
-        if (!this.args.user.get('user_fields')) {
-            console.warn(`[Custom Profile Link] User Profile () missing "user_fields"! Raw user dump follows.`, this.args.user);
+        if (!this.args.lastValue.user.get('user_fields')) {
+            console.warn(`[Custom Profile Link] User Profile () missing "user_fields"! Raw user dump follows.`, this.args.lastValue.user);
             return undefined;
         } else {
             for (let i = 0; i < ids.length; i++) {
-                if (!this.args.user.get('user_fields')[ids[i]] && settings.custom_profile_link_debug_mode) console.debug(`[Custom Profile Link] User field ${ids[i]} missing. user_fields dump follows.`, this.args.user.get("user_fields"));
-                if (!!this.args.user.get('user_fields')[ids[i]]) links.push([this.args.user.get('user_fields')[ids[i]], labels[i], prefixes[i]]);
+                if (!this.args.lastValue.user.get('user_fields')[ids[i]] && settings.custom_profile_link_debug_mode) console.debug(`[Custom Profile Link] User field ${ids[i]} missing. user_fields dump follows.`, this.args.lastValue.user.get("user_fields"));
+                if (!!this.args.lastValue.user.get('user_fields')[ids[i]]) links.push([this.args.lastValue.user.get('user_fields')[ids[i]], labels[i], prefixes[i]]);
             }
             if (settings.custom_profile_link_debug_mode) console.debug("[Custom Profile Link] links built, dump:", links)
             return links;
