@@ -16,7 +16,7 @@ custom_profile_link_prefixes:
 custom_profile_link_orgs:
   type: list
   default: "Organization,1,2|"
-  description: "Organization style links, format of label,id-of-name,id-of-url"
+  description: "Organization style links, format of: label,id-of-name,id-of-url"
 
 custom_profile_link_debug_mode:
   type: bool

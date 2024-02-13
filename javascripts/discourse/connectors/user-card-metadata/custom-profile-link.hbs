@@ -4,6 +4,11 @@
         {{#each this.links as |link|}}
         <a href="{{link.[2]}}{{link.[0]}}" target="_blank">{{link.[1]}}</a>
         {{/each}}
+        {{#if this.orgs}}
+            {{#each this.orgs as |org|}}
+                <a href="{{org.[2]}}">{{link.[0]}}: {{link.[1]}}</a>
+            {{/each}}
+        {{/if}}
     </span>
 </h3>
 {{/if}}
