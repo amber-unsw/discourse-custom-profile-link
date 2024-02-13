@@ -6,8 +6,9 @@
             <a href="{{link.[2]}}{{link.[0]}}" target="_blank">{{link.[1]}}</a>
             {{/each}}
             {{#if this.orgs}}
+                </br>
                 {{#each this.orgs as |org|}}
-                    <a href="{{org.[2]}}">{{link.[0]}}: {{link.[1]}}</a>
+                    <a href="{{org.[2]}}">{{org.[0]}}: {{org.[1]}}</a>
                 {{/each}}
             {{/if}}
         </span>
