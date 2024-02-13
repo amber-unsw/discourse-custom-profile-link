@@ -7,7 +7,7 @@
         {{#if this.orgs}}
             <br/>
             {{#each this.orgs as |org|}}
-                <a href="{{org.[2]}}">{{org.[0]}}: {{org.[1]}}</a>
+                {{org.[0]}}: <a href="{{org.[2]}}">{{org.[1]}}</a>
             {{/each}}
         {{/if}}
     </span>
