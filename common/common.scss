@@ -1,3 +1,10 @@
 .user-card-metadata-outlet.custom-profile-links-orgs .desc {
   font-weight: bold;
 }
+
+.user-card-metadata-outlet.custom-profile-links-orgs, .user-card-metadata-outlet.custom-profile-links-links {
+  padding: 3px 5px;
+  display: flex;
+  border-radius: var(--d-border-radius);
+  align-items: center;
+}
