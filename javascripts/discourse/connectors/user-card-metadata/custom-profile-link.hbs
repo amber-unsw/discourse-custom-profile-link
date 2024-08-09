@@ -1,5 +1,5 @@
 {{#if this.links}}
-<h3 class="user-card-public-field">
+<div class="user-card-public-field">
     <span class="user-field-value">
         {{#each this.links as |link|}}
         <a href="{{link.[2]}}{{link.[0]}}" target="_blank">{{link.[1]}}</a>
@@ -11,5 +11,5 @@
             {{/each}}
         {{/if}}
     </span>
-</h3>
+</div>
 {{/if}}
